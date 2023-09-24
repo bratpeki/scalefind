@@ -62,20 +62,7 @@ void sfPrintScale(sfscale scale) {
 
 	printf("%s\n", scale.name);
 
-	/*
-	 * Number of notes in the scale
-	 *
-	 * Since the string lenght is very small,
-	 * we can excplicitly cast to a unsigned char
-	 * without data loss
-	 */
-
 	unsigned char notesNum = strlen(scale.notes);
-
-	/*
-	 * Iterate over the characters in the scale,
-	 * parse them and output the appropriate notes
-	 */
 
 	for ( unsigned char i = 0; i < notesNum; i++ ) {
 
@@ -95,8 +82,6 @@ void sfPrintScale(sfscale scale) {
 			case 'b': printf("B");  break;
 
 		}
-
-		/* Add a dash between notes in the output */
 
 		if ( i != notesNum - 1 ) printf (" - ");
 
@@ -140,11 +125,20 @@ void sfFind(const char *notes) {
 
 	}
 
-	/* Iterate over the scales in sfScalesAll */
-
 	/*
+	 * Iterate over the scales in sfScalesAll
+	 *
 	 * For each iteration, have a flag which checks if all the notes in the
 	 * argument and, if all the notes are included, print out the scale
 	 */
+
+	unsigned char fAllNotesInc;
+
+	for ( unsigned int scaleIndex = 0; scaleIndex < sizeof(sfScalesAll)/sizeof(sfscale); scaleIndex++) {
+
+		fAllNotesInc = 0;
+
+	}
+
 
 }

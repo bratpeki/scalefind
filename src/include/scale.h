@@ -65,13 +65,6 @@ typedef struct _SFscale {
 } sfscale;
 
 /*
- * Given an sfscale argument,
- * print out information about it
- */
-
-void sfPrintScale(sfscale scale);
-
-/*
  * Print out every scale which contains
  * the notes in the argument string
  */
