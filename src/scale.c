@@ -132,13 +132,4 @@ void sfFind(const char *notes) {
 	 * argument and, if all the notes are included, print out the scale
 	 */
 
-	unsigned char fAllNotesInc;
-
-	for ( unsigned int scaleIndex = 0; scaleIndex < sizeof(sfScalesAll)/sizeof(sfscale); scaleIndex++) {
-
-		fAllNotesInc = 0;
-
-	}
-
-
 }
