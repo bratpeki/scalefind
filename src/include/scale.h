@@ -5,7 +5,7 @@
  * This header file is reserved for all datatypes
  * and functions used in the project
  *
- * The notes and scales are all given in 12-ET
+ * The notes and scales are all given in the 12-ET
  * musical system, as characters/strings, where
  * notes are represented by a special character
  *
@@ -28,6 +28,17 @@
  * This program will only rely on sharps,
  * instead of using the standard combination of
  * sharps and flats
+ *
+ * All scales are written so that
+ * the first character is the tonic note
+ * and every character after it is the
+ * next note in the scale
+ *
+ * In other words, every scale is given in
+ * the standard succession
+ *
+ * The tonic note is not repeated, that is
+ * C major is written as "cdefgab", not "cdefgabc"
  */
 
 #include <stdio.h>
@@ -40,9 +51,9 @@ typedef struct _SFscale {
 	/*
 	 * The scale notes; a fixed-size string
 	 *
-	 * The string contains a maximum of 12 notes,
-	 * first of which is the scale tonic note,
-	 * and the string escape character
+	 * The string contains a maximum of
+	 * 12 note characters and
+	 * one string escape character
 	 */
 
 	char notes[13];
@@ -61,8 +72,8 @@ typedef struct _SFscale {
 void sfPrintScale(sfscale scale);
 
 /*
- * Given a string argument which represents the notes,
- * print out the scales which use all the passed notes
+ * Print out every scale which contains
+ * the notes in the argument string
  */
 
 void sfFind(char *notes);
