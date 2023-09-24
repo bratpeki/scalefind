@@ -62,13 +62,22 @@ void sfPrintScale(sfscale scale) {
 
 	printf("%s\n", scale.name);
 
-	/* number of notes in the scale */
+	/*
+	 * Number of notes in the scale
+	 *
+	 * Since the string lenght is very small,
+	 * we can excplicitly cast to a unsigned char
+	 * without data loss
+	 */
 
-	char notesNum = strlen(scale.notes);
+	unsigned char notesNum = strlen(scale.notes);
 
-	for ( char i = 0; i < notesNum; i++ ) {
+	/*
+	 * Iterate over the characters in the scale,
+	 * parse them and output the appropriate notes
+	 */
 
-		/* Parse the characters and output the appropriate notes */
+	for ( unsigned char i = 0; i < notesNum; i++ ) {
 
 		switch ( scale.notes[i] ) {
 
@@ -97,7 +106,39 @@ void sfPrintScale(sfscale scale) {
 
 }
 
-void sfFind(char *notes) {
+void sfFind(const char *notes) {
+
+	/* Check that the size of the argument is less than 13 */
+
+	unsigned long notesNum = strlen(notes);
+
+	if (notesNum > 12) {
+		printf("The input string (%s) is too long. Exiting.\n", notes);
+		return;
+	}
+
+	/* Validate that the argument doesn't have illegal characters */
+
+	for ( unsigned char i = 0; i < notesNum; i++ ) {
+
+		switch (notes[i]) {
+
+			case 'c': case 'C': case 'd': case 'D':
+			case 'e': case 'b': case 'f': case 'F':
+			case 'g': case 'G': case 'a': case 'A':
+				break;
+
+			default:
+				printf(
+					"The input string (%s) contains"
+					"an illegal character (%c). Exiting.\n",
+					notes, notes[i]
+				);
+				break;
+
+		}
+
+	}
 
 	/* Iterate over the scales in sfScalesAll */
 

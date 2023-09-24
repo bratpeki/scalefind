@@ -56,11 +56,11 @@ typedef struct _SFscale {
 	 * one string escape character
 	 */
 
-	char notes[13];
+	const char notes[13];
 
 	/* The scale name; a variable-sized string */
 
-	char *name;
+	const char *name;
 
 } sfscale;
 
@@ -76,6 +76,6 @@ void sfPrintScale(sfscale scale);
  * the notes in the argument string
  */
 
-void sfFind(char *notes);
+void sfFind(const char *notes);
 
 #endif
