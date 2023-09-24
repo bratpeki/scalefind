@@ -58,6 +58,8 @@ sfscale sfScalesAll[48] = {
 
 };
 
+/* TODO: Add an assisting function which checks if notes are in the scale */
+
 void sfPrintScale(sfscale scale) {
 
 	printf("%s\n", scale.name);
