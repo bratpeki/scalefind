@@ -24,7 +24,14 @@
  * A    | a
  * A#   | A
  * B    | b
+ *
+ * This program will only rely on sharps,
+ * instead of using the standard combination of
+ * sharps and flats
  */
+
+#include <stdio.h>
+#include <string.h>
 
 /* A structure used to hold one scale */
 
@@ -45,6 +52,13 @@ typedef struct _SFscale {
 	char *name;
 
 } sfscale;
+
+/*
+ * Given an sfscale argument,
+ * print out information about it
+ */
+
+void sfPrintScale(sfscale scale);
 
 /*
  * Given a string argument which represents the notes,

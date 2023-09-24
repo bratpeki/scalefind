@@ -58,5 +58,52 @@ sfscale sfScalesAll[48] = {
 
 };
 
+void sfPrintScale(sfscale scale) {
+
+	printf("%s\n", scale.name);
+
+	/* number of notes in the scale */
+
+	char notesNum = strlen(scale.notes);
+
+	for ( char i = 0; i < notesNum; i++ ) {
+
+		/* Parse the characters and output the appropriate notes */
+
+		switch ( scale.notes[i] ) {
+
+			case 'c': printf("C");  break;
+			case 'C': printf("C#"); break;
+			case 'd': printf("D");  break;
+			case 'D': printf("D#"); break;
+			case 'e': printf("E");  break;
+			case 'f': printf("F");  break;
+			case 'F': printf("F#"); break;
+			case 'g': printf("G");  break;
+			case 'G': printf("G#"); break;
+			case 'a': printf("A");  break;
+			case 'A': printf("A#"); break;
+			case 'b': printf("B");  break;
+
+		}
+
+		/* Add a dash between notes in the output */
+
+		if ( i != notesNum - 1 ) printf (" - ");
+
+	}
+
+	printf("\n");
+
+}
+
 void sfFind(char *notes) {
+
+	/* Iterate over the scales in sfScalesAll */
+
+	/*
+	 * For each iteration, have a flag which checks if all the notes in the
+	 * argument and, if all the notes are included, print out the scale
+	 */
+
 }
