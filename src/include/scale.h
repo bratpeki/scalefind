@@ -1,5 +1,5 @@
-#ifndef SF_SCALE
-#define SF_SCALE
+#ifndef SCALEFINDER_SCALE
+#define SCALEFINDER_SCALE
 
 /*
  * This header file is reserved for all datatypes
@@ -40,9 +40,6 @@
  * The tonic note is not repeated, that is
  * C major is written as "cdefgab", not "cdefgabc"
  */
-
-#include <stdio.h>
-#include <string.h>
 
 /* A structure used to hold one scale */
 

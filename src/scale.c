@@ -1,5 +1,8 @@
 #include "./include/scale.h"
 
+#include <stdio.h>
+#include <string.h>
+
 /* A variable which contains all our scales */
 
 sfscale sfScalesAll[] = {
