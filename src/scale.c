@@ -2,7 +2,7 @@
 
 /* A variable which contains all our scales */
 
-sfscale sfScalesAll[48] = {
+sfscale sfScalesAll[] = {
 
 	{ "cdefgab", "C Major"           },
 	{ "CDfFGAc", "C# Major"          },
@@ -58,7 +58,7 @@ sfscale sfScalesAll[48] = {
 
 };
 
-/* TODO: Add an assisting function which checks if notes are in the scale */
+/* Print the scale */
 
 void sfPrintScale(sfscale scale) {
 
@@ -93,6 +93,13 @@ void sfPrintScale(sfscale scale) {
 
 }
 
+/*
+ * Check if the characters in the first string are all in the second string
+ *
+ * Returns 0 if they are not
+ * Returns 1 if they are
+ */
+
 unsigned char sfNotesInScale(const char *notes, const char *scale) {
 
 	unsigned char fAllNotesIn = 1;
@@ -115,18 +122,14 @@ unsigned char sfNotesInScale(const char *notes, const char *scale) {
 
 void sfFind(const char *notes) {
 
-	/* Check that the size of the argument is less than 13 */
-
 	unsigned long notesNum = strlen(notes);
 
 	if (notesNum > 12) {
-		printf("The input string (%s) is too long. Exiting.\n", notes);
+		printf("The input string (%s) exceeds the 12-character limit. Exiting!\n", notes);
 		return;
 	}
 
-	/* Validate that the argument doesn't have illegal characters */
-
-	for ( unsigned char i = 0; i < notesNum; i++ ) {
+	for ( unsigned char i = 0; i < notesNum; i++ )
 
 		switch (notes[i]) {
 
@@ -138,21 +141,12 @@ void sfFind(const char *notes) {
 			default:
 				printf(
 					"The input string (%s) contains"
-					"an illegal character (%c). Exiting.\n",
+					"an illegal character (%c). Exiting!\n",
 					notes, notes[i]
 				);
 				break;
 
 		}
-
-	}
-
-	/*
-	 * Iterate over the scales in sfScalesAll
-	 *
-	 * For each iteration, have a flag which checks if all the notes in the
-	 * argument and, if all the notes are included, print out the scale
-	 */
 
 	for ( unsigned int i = 0; i < sizeof(sfScalesAll)/sizeof(sfscale); i++ ) {
 
