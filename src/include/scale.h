@@ -1,5 +1,5 @@
-#ifndef SCALEFINDER_SCALE
-#define SCALEFINDER_SCALE
+#ifndef SCALEFIND_SCALE
+#define SCALEFIND_SCALE
 
 /*
  * This header file is reserved for all datatypes
