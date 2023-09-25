@@ -62,7 +62,7 @@ sfscale sfScalesAll[48] = {
 
 void sfPrintScale(sfscale scale) {
 
-	printf("%s\n", scale.name);
+	printf("%s: ", scale.name);
 
 	unsigned char notesNum = strlen(scale.notes);
 
@@ -90,6 +90,26 @@ void sfPrintScale(sfscale scale) {
 	}
 
 	printf("\n");
+
+}
+
+unsigned char sfNotesInScale(const char *notes, const char *scale) {
+
+	unsigned char fAllNotesIn = 1;
+	unsigned char fNoteIn;
+
+	for ( unsigned char iNote = 0; (iNote < strlen(notes)) && fAllNotesIn; iNote++ ) {
+
+		fNoteIn = 0;
+
+		for ( unsigned char iScale = 0; (iScale < strlen(scale)) && fAllNotesIn; iScale++ )
+			if ( notes[iNote] == scale[iScale] ) fNoteIn = 1;
+
+		if (fNoteIn == 0) fAllNotesIn = 0;
+
+	}
+
+	return fAllNotesIn;
 
 }
 
@@ -133,5 +153,12 @@ void sfFind(const char *notes) {
 	 * For each iteration, have a flag which checks if all the notes in the
 	 * argument and, if all the notes are included, print out the scale
 	 */
+
+	for ( unsigned int i = 0; i < sizeof(sfScalesAll)/sizeof(sfscale); i++ ) {
+
+		if (sfNotesInScale(notes, sfScalesAll[i].notes))
+			sfPrintScale(sfScalesAll[i]);
+
+	}
 
 }

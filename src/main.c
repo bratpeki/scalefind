@@ -4,15 +4,7 @@ int main(int argc, char **argv) {
 
 	/* Iterate over the arguments */
 
-	/* TODO: COMMENTED OUT FOR NOW
-	for (int i = 1; i < argc; i++) {
-		printf("Finding scales for the notes: %s\n", argv[i]);
+	for (int i = 1; i < argc; i++)
 		sfFind(argv[i]);
-	}
-	*/
-
-	/* Test cases */
-
-	sfFind("cbdDAE");
 
 }
