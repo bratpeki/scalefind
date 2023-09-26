@@ -63,17 +63,15 @@ sfscale sfScalesAll[] = {
 
 };
 
-/* Print the scale */
+/* Print the formatted notes (no newline at the end) */
 
-void sfPrintScale(sfscale scale) {
+void sfPrintNotes(const char* notes) {
 
-	printf("%s: ", scale.name);
-
-	unsigned char notesNum = strlen(scale.notes);
+	unsigned char notesNum = strlen(notes);
 
 	for ( unsigned char i = 0; i < notesNum; i++ ) {
 
-		switch ( scale.notes[i] ) {
+		switch ( notes[i] ) {
 
 			case 'c': printf("C");  break;
 			case 'C': printf("C#"); break;
@@ -93,6 +91,16 @@ void sfPrintScale(sfscale scale) {
 		if ( i != notesNum - 1 ) printf (" - ");
 
 	}
+
+}
+
+/* Print the scale information */
+
+void sfPrintScale(sfscale scale) {
+
+	printf("  %s: ", scale.name);
+
+	sfPrintNotes(scale.notes);
 
 	printf("\n");
 
@@ -152,6 +160,10 @@ void sfFind(const char *notes) {
 				break;
 
 		}
+
+	printf("Scales that contain the notes: ");
+	sfPrintNotes(notes);
+	printf("\n");
 
 	for ( unsigned int i = 0; i < sizeof(sfScalesAll)/sizeof(sfscale); i++ ) {
 
