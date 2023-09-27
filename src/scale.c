@@ -61,6 +61,19 @@ sfscale sfScalesAll[] = {
 	{ "AcCDfga",      "A# Melodic Minor"   },
 	{ "bCdeFGA",      "B Melodic Minor"    },
 
+	{ "cdDfgaA",      "C Dorian"           },
+	{ "CDeFGAb",      "C# Dorian"          },
+	{ "defgabc",      "D Dorian"           },
+	{ "DfFGAcC",      "D# Dorian"          },
+	{ "eFgabCd",      "E Dorian"           },
+	{ "fgGAcdD",      "F Dorian"           },
+	{ "FGabCDe",      "F# Dorian"          },
+	{ "gaAcdef",      "G Dorian"           },
+	{ "GAbCDfF",      "G# Dorian"          },
+	{ "abcdeFg",      "A Dorian"           },
+	{ "AcCDfgG",      "A# Dorian"          },
+	{ "bCdeFGa",      "B Dorian"           },
+
 };
 
 /* Print the formatted notes (no newline at the end) */
