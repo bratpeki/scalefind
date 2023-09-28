@@ -123,9 +123,9 @@ void sfPrintNotes(const char* notes) {
 
 	unsigned char notesNum = strlen(notes);
 
-	for ( unsigned char i = 0; i < notesNum; i++ ) {
+	for (unsigned char i = 0; i < notesNum; i++) {
 
-		switch ( notes[i] ) {
+		switch (notes[i]) {
 
 			case 'c': printf("C");  break;
 			case 'C': printf("C#"); break;
@@ -142,7 +142,7 @@ void sfPrintNotes(const char* notes) {
 
 		}
 
-		if ( i != notesNum - 1 ) printf (" - ");
+		if (i != notesNum - 1) printf (" - ");
 
 	}
 
@@ -172,12 +172,12 @@ unsigned char sfNotesInScale(const char *notes, const char *scale) {
 	unsigned char fAllNotesIn = 1;
 	unsigned char fNoteIn;
 
-	for ( unsigned char iNote = 0; (iNote < strlen(notes)) && fAllNotesIn; iNote++ ) {
+	for (unsigned char iNote = 0; (iNote < strlen(notes)) && fAllNotesIn; iNote++) {
 
 		fNoteIn = 0;
 
-		for ( unsigned char iScale = 0; (iScale < strlen(scale)) && fAllNotesIn; iScale++ )
-			if ( notes[iNote] == scale[iScale] ) fNoteIn = 1;
+		for (unsigned char iScale = 0; (iScale < strlen(scale)) && fAllNotesIn; iScale++)
+			if (notes[iNote] == scale[iScale]) fNoteIn = 1;
 
 		if (fNoteIn == 0) fAllNotesIn = 0;
 
@@ -196,7 +196,7 @@ void sfFind(const char *notes) {
 		return;
 	}
 
-	for ( unsigned char i = 0; i < notesNum; i++ )
+	for (unsigned char i = 0; i < notesNum; i++)
 
 		switch (notes[i]) {
 
@@ -219,11 +219,8 @@ void sfFind(const char *notes) {
 	sfPrintNotes(notes);
 	printf("\n");
 
-	for ( unsigned int i = 0; i < sizeof(sfScalesAll)/sizeof(sfscale); i++ ) {
-
+	for (unsigned int i = 0; i < sizeof(sfScalesAll)/sizeof(sfscale); i++)
 		if (sfNotesInScale(notes, sfScalesAll[i].notes))
 			sfPrintScale(sfScalesAll[i]);
-
-	}
 
 }
