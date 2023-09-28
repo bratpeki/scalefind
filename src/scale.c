@@ -9,6 +9,8 @@ sfscale sfScalesAll[] = {
 
 	{ "cCdDefFgGaAb", "Chromatic"          },
 
+	/* TODO: Sort the major scale modes by order of appearance */
+
 	{ "cdefgab",      "C Major"            },
 	{ "CDfFGAc",      "C# Major"           },
 	{ "deFgabC",      "D Major"            },
