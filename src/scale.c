@@ -87,6 +87,32 @@ sfscale sfScalesAll[] = {
 	{ "AbCDfFG",      "A# Phrygian"        },
 	{ "bcdeFga",      "B Phrygian"         },
 
+	{ "cdeFgab",      "C Lydian"           },
+	{ "CDfgGAc",      "C# Lydian"          },
+	{ "deFGabC",      "D Lydian"           },
+	{ "DfgaAcd",      "D# Lydian"          },
+	{ "eFGAbCD",      "E Lydian"           },
+	{ "fgabcde",      "F Lydian"           },
+	{ "FGAcCDf",      "F# Lydian"          },
+	{ "gabCdeF",      "G Lydian"           },
+	{ "GAcdDfg",      "G# Lydian"          },
+	{ "abCDeFG",      "A Lydian"           },
+	{ "Acdefga",      "A# Lydian"          },
+	{ "bCDfFGA",      "B Lydian"           },
+
+	{ "cdefgaA",      "C Mixolydian"       },
+	{ "CDfFGAb",      "C# Mixolydian"      },
+	{ "deFgabc",      "D Mixolydian"       },
+	{ "DfgGAcC",      "D# Mixolydian"      },
+	{ "eFGabCd",      "E Mixolydian"       },
+	{ "fgaAcdD",      "F Mixolydian"       },
+	{ "FGAbCDe",      "F# Mixolydian"      },
+	{ "gabcdef",      "G Mixolydian"       },
+	{ "GAcCDfF",      "G# Mixolydian"      },
+	{ "abCdeFg",      "A Mixolydian"       },
+	{ "AcdDfgG",      "A# Mixolydian"      },
+	{ "bCDeFGa",      "A# Mixolydian"      },
+
 };
 
 /* Print the formatted notes (no newline at the end) */
