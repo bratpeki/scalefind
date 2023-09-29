@@ -1,7 +1,7 @@
 CC=gcc -std=c99 -O2 -Wall -Wextra -Wpedantic
 C=$(shell find . -name "*.c")
-OUT=main.out # TODO: Change to "scalefind" later
-LNK= # TODO: For the graphical component: -lSDL2
+OUT=main.out# TODO: Change to "scalefind" later
+LNK=# TODO: For the graphical component: -lSDL2
 
 build:
 	@$(CC) -o $(OUT) $(C) $(LNK)
@@ -12,5 +12,5 @@ clean:
 dbuild:
 	@$(CC) -o $(OUT) $(C) $(LNK) -g
 
-exec:
-	@./$(OUT)
+test:
+	./$(OUT) aCD
