@@ -1,6 +1,6 @@
 CC=gcc -std=c99 -O2 -Wall -Wextra -Wpedantic
 C=$(shell find . -name "*.c")
-OUT=main.out# TODO: Change to "scalefind" later
+OUT=scalefind
 LNK=# TODO: For the graphical component: -lSDL2
 
 build:
