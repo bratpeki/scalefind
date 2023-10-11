@@ -5,7 +5,7 @@
 void cliHelp() {
 
 	printf(
-		"scalefind by brat.peki\n"
+		"scalefind by bratpeki\n"
 		"https://github.com/bratpeki/scalefind\n"
 		"\n"
 		"USAGE:\n"
