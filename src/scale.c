@@ -231,11 +231,11 @@ void sfFind(const char *notes) {
 
 			default:
 				printf(
-					"The input string (%s) contains"
+					"The input string (%s) contains "
 					"an illegal character (%c). Exiting!\n",
 					notes, notes[i]
 				);
-				break;
+				return;
 
 		}
 
