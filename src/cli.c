@@ -1,3 +1,6 @@
+
+/* cli.c */
+
 #include "./include/cli.h"
 
 #include <stdio.h>
@@ -8,13 +11,18 @@ void cliHelp() {
 		"scalefind by bratpeki\n"
 		"https://github.com/bratpeki/scalefind\n"
 		"\n"
+	);
+
+	printf(
 		"USAGE:\n"
 		"    (./)scalefind (args)\n"
 		"\n"
+	);
+
+	printf(
 		"ARGS:\n"
 		"    scalefind accepts strings of a size no larger than 12.\n"
 		"    the args must contain only the characters in the table below:\n"
-		"\n"
 		"    Note | Character\n"
 		"    C    | c\n"
 		"    C#   | C\n"
@@ -32,13 +40,20 @@ void cliHelp() {
 		"    Any string arg represents a set of notes,\n"
 		"    ex. \"cFA\" represents C, F# and A#.\n"
 		"\n"
+	);
+
+	printf(
 		"OUTPUT:\n"
 		"    For any given arg, scalefind returns the scales\n"
 		"    which contain all the named notes.\n"
 		"    The program is always guaranteed to return the\n"
 		"    chromatic scale.\n"
 		"\n"
+	);
+
+	printf(
 		"Happy usage!\n"
 	);
 
 }
+

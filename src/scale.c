@@ -1,11 +1,16 @@
+
+/* scale.c */
+
 #include "./include/scale.h"
+#include "./include/bool.h"
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 
 /* A variable which contains all our scales */
 
-sfscale sfScalesAll[] = {
+sfscale_t sfScalesAll[] = {
 
 	{ "cCdDefFgGaAb", "Chromatic"          },
 
@@ -145,9 +150,10 @@ sfscale sfScalesAll[] = {
 
 void sfPrintNotes(const char* notes) {
 
-	unsigned char notesNum = strlen(notes);
+	size_t i;
+	size_t notesNum = strlen(notes);
 
-	for (unsigned char i = 0; i < notesNum; i++) {
+	for (i = 0; i < notesNum; i++) {
 
 		switch (notes[i]) {
 
@@ -174,7 +180,7 @@ void sfPrintNotes(const char* notes) {
 
 /* Print the scale information */
 
-void sfPrintScale(sfscale scale) {
+void sfPrintScale(sfscale_t scale) {
 
 	printf("  %s: ", scale.name);
 
@@ -184,26 +190,28 @@ void sfPrintScale(sfscale scale) {
 
 }
 
-/*
- * Check if the characters in the first string are all in the second string
- *
- * Returns 0 if they are not
- * Returns 1 if they are
- */
+/* Check if the characters in the first string are all in the second string */
 
-unsigned char sfNotesInScale(const char *notes, const char *scale) {
+bool_t sfNotesInScale(const char *notes, const char *scale) {
 
-	unsigned char fAllNotesIn = 1;
-	unsigned char fNoteIn;
+	bool_t fAllNotesIn = TRUE, fNoteIn; /* Flags */
+	size_t iNote, iScale; /* Integer values */
 
-	for (unsigned char iNote = 0; (iNote < strlen(notes)) && fAllNotesIn; iNote++) {
+	size_t strlenNotes = strlen(notes); /* Cached values */
+	size_t strlenScale = strlen(scale);
 
-		fNoteIn = 0;
+	for (iNote = 0; (iNote < strlenNotes) && fAllNotesIn; iNote++) {
 
-		for (unsigned char iScale = 0; (iScale < strlen(scale)) && fAllNotesIn; iScale++)
-			if (notes[iNote] == scale[iScale]) fNoteIn = 1;
+		fNoteIn = FALSE;
 
-		if (fNoteIn == 0) fAllNotesIn = 0;
+		for (iScale = 0; iScale < strlenScale; iScale++) {
+			if (notes[iNote] == scale[iScale]) {
+				fNoteIn = TRUE;
+				break;
+			}
+		}
+
+		if (!fNoteIn) fAllNotesIn = FALSE;
 
 	}
 
@@ -213,14 +221,15 @@ unsigned char sfNotesInScale(const char *notes, const char *scale) {
 
 void sfFind(const char *notes) {
 
-	unsigned long notesNum = strlen(notes);
+	size_t notesNum = strlen(notes);
+	size_t i;
 
 	if (notesNum > 12) {
 		printf("The input string (%s) exceeds the 12-character limit. Exiting!\n", notes);
 		return;
 	}
 
-	for (unsigned char i = 0; i < notesNum; i++)
+	for (i = 0; i < notesNum; i++)
 
 		switch (notes[i]) {
 
@@ -243,8 +252,9 @@ void sfFind(const char *notes) {
 	sfPrintNotes(notes);
 	printf("\n");
 
-	for (unsigned int i = 0; i < sizeof(sfScalesAll)/sizeof(sfscale); i++)
+	for (i = 0; i < sizeof(sfScalesAll)/sizeof(sfscale_t); i++)
 		if (sfNotesInScale(notes, sfScalesAll[i].notes))
 			sfPrintScale(sfScalesAll[i]);
 
 }
+

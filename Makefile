@@ -1,4 +1,4 @@
-CC=gcc -std=c99 -O2 -Wall -Wextra -Wpedantic
+CC=gcc -ansi -O2 -Wall -Wextra -Wpedantic
 C=$(shell find . -name "*.c")
 OUT=scalefind
 

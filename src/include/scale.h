@@ -1,3 +1,6 @@
+
+/* include/scale.h */
+
 #ifndef SCALEFIND_SCALE
 #define SCALEFIND_SCALE
 
@@ -43,7 +46,7 @@
 
 /* A structure used to hold one scale */
 
-typedef struct _SFscale {
+typedef struct sfscale {
 
 	/*
 	 * The scale notes; a fixed-size string
@@ -59,7 +62,7 @@ typedef struct _SFscale {
 
 	const char *name;
 
-} sfscale;
+} sfscale_t;
 
 /*
  * Print out every scale which contains
@@ -69,3 +72,4 @@ typedef struct _SFscale {
 void sfFind(const char *notes);
 
 #endif
+

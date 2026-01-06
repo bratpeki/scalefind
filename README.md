@@ -1,4 +1,6 @@
-`scalefind` is a command-line program which finds all scales in the program
+# scalefind
+
+`scalefind` is an ANSI C command-line program which finds all scales in the program
 that contain the notes passed to the program.
 
 ## Example usage
